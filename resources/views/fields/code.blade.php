@@ -1,12 +1,11 @@
 @props([
     'label' => '',
     'value' => '',
-    'language' => '',
-    'options' => '',
+    'config',
 ])
 
 <div
-    x-data="ace('{{$language}}', {{$options}})"
+    x-data="ace({{$config}})"
     class="ace"
 >
     <div {{ $attributes->only(['class', 'style'])->merge(['class' => 'ace_editor']) }}>{!! $value ?? '' !!}</div>

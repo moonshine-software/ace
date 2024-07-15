@@ -6,4 +6,8 @@ return [
         'useSoftTabs' => true,
         'navigateWithinSoftTabs' => true,
     ],
-];
+    'themes' => [
+//        'light' => 'chrome',
+//        'dark' => 'cobalt'
+    ],
+ ];

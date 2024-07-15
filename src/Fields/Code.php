@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MoonShine\Ace\Fields;
 
+use Closure;
 use MoonShine\AssetManager\Css;
 use MoonShine\AssetManager\Js;
 use MoonShine\UI\Fields\Textarea;
@@ -13,13 +14,25 @@ class Code extends Textarea
     protected string $view = 'moonshine-ace::fields.code';
 
     protected array $options = [];
-    protected ?string $language = null;
+    protected ?string $language;
+    protected array $themes;
 
     protected array $reservedOptions = [
         'mode',
         'theme',
         'readOnly',
     ];
+
+    public function __construct(string|Closure|null $label = null, ?string $column = null, ?Closure $formatted = null)
+    {
+        $this->language = config('moonshine_ace.language');
+        $this->themes = [
+            'light' => config('moonshine_ace.themes.light'),
+            'dark' => config('moonshine_ace.themes.dark'),
+        ];
+
+        parent::__construct($label, $column, $formatted);
+    }
 
     public function getAssets(): array
     {
@@ -41,7 +54,7 @@ class Code extends Textarea
         return $this;
     }
 
-    public function getOptions(): array
+    protected function getOptions(): array
     {
         return array_merge(
             config('moonshine_ace.options', []),
@@ -57,9 +70,26 @@ class Code extends Textarea
         return $this;
     }
 
-    public function getLanguage(): string
+    public function themes(string $light = null, string $dark = null): static
     {
-        return $this->language ?? config('moonshine_ace.language');
+        if (isset($light)) {
+            $this->themes['light'] = $light;
+        }
+
+        if (isset($dark)) {
+            $this->themes['dark'] = $dark;
+        }
+
+        return $this;
+    }
+
+    public function getConfig(): array
+    {
+        return [
+            'language' => $this->language,
+            'themes' => $this->themes,
+            'options' => $this->getOptions(),
+        ];
     }
 
     protected function resolvePreview(): string
@@ -77,8 +107,7 @@ class Code extends Textarea
     protected function viewData(): array
     {
         return [
-            'options' => json_encode($this->getOptions()),
-            'language' => $this->getLanguage()
+            'config' => json_encode($this->getConfig()),
         ];
     }
 }
