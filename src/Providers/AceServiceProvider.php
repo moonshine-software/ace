@@ -22,7 +22,7 @@ final class AceServiceProvider extends ServiceProvider
         );
 
         $this->publishes([
-            __DIR__ . '/../../public' => public_path('vendor/moonshine/packages/ace'),
-        ], ['moonshine-ace-assets', 'moonshine-assets', 'laravel-assets']);
+            __DIR__ . '/../../public' => public_path('vendor/moonshine-ace'),
+        ], ['moonshine-ace-assets', 'laravel-assets']);
     }
 }

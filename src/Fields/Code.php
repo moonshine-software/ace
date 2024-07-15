@@ -24,9 +24,9 @@ class Code extends Textarea
     public function getAssets(): array
     {
         return [
-            Css::make('vendor/moonshine/packages/ace/ace.css'),
-            Js::make('vendor/moonshine/packages/ace/assets/ace.js'),
-            Js::make('vendor/moonshine/packages/ace/init.js'),
+            Css::make('vendor/moonshine-ace/ace.css'),
+            Js::make('vendor/moonshine-ace/assets/ace.js'),
+            Js::make('vendor/moonshine-ace/init.js'),
         ];
     }
 
