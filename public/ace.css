@@ -1,0 +1,21 @@
+.ace {
+  position: relative;
+}
+.ace > textarea {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.ace_editor {
+  height: 300px;
+  border:1px solid rgb(209 213 219);
+  position: relative;
+  z-index: 1;
+}
+.dark .ace_editor {
+  border: 1px solid rgb(var(--dark-300));
+}
