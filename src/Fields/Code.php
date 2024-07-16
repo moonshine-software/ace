@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace MoonShine\Ace\Fields;
 
 use Closure;
-use MoonShine\AssetManager\Css;
-use MoonShine\AssetManager\Js;
-use MoonShine\UI\Fields\Textarea;
+use MoonShine\Fields\Textarea;
 
 class Code extends Textarea
 {
@@ -37,9 +35,9 @@ class Code extends Textarea
     public function getAssets(): array
     {
         return [
-            Css::make('vendor/moonshine-ace/ace.css'),
-            Js::make('vendor/moonshine-ace/assets/ace.js'),
-            Js::make('vendor/moonshine-ace/init.js'),
+            'vendor/moonshine-ace/ace.css',
+            'vendor/moonshine-ace/assets/ace.js',
+            'vendor/moonshine-ace/init.js',
         ];
     }
 
