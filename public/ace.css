@@ -12,6 +12,7 @@
 }
 .ace_editor {
   height: 300px;
+  border-radius: 0.375rem;
   border:1px solid rgb(209 213 219);
   position: relative;
   z-index: 1;
@@ -23,7 +24,6 @@
 /* default theme */
 .ace-tm .ace_gutter {
   background: rgba(241 245 249);
-  border-right: 1px solid rgba(var(--dark-300), .5);
 }
 .ace-tm .ace_marker-layer .ace_selection {
   background: rgb(var(--primary));
