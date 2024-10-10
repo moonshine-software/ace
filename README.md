@@ -8,10 +8,8 @@ Extends [Textarea](https://moonshine-laravel.com/docs/resource/fields/fields-tex
     <img alt="windows" src="./art/code.png">
 </picture>
 
-> [!INFO]
+> [!NOTE]
 > The package is based on the [Ace](https://ace.c9.io/) library.
-
----
 
 ---
 
@@ -58,7 +56,7 @@ You can also add additional options to the configuration file that will apply to
 ],
 ```
 
-> [!INFO]
+> [!NOTE]
 > For more information, visit the [Ace](https://ace.c9.io/) library.
 
 ## Language
