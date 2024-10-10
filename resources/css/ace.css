@@ -5,11 +5,14 @@
   @apply absolute top-0 left-0 w-full h-full opacity-0 z-0;
 }
 .ace_editor {
-  @apply h-[300px] relative rounded-md border border-gray-300 outline-none transition-all duration-200 dark:border-[var(--dark-300)];
+  @apply h-[300px] relative rounded-md border border-gray-300 outline-none transition-all duration-200 dark:border-[rgb(var(--dark-300))];
   z-index: 1;
 }
 .ace_editor.ace_focus {
-  @apply border-gray-300 ring ring-gray-200 ring-opacity-70 dark:ring-[var(--dark-100)] dark:ring-opacity-30;
+  @apply ring ring-gray-200 ring-opacity-70
+}
+.dark .ace_editor.ace_focus {
+  --tw-ring-color: rgba(var(--dark-100), 0.3);
 }
 .ace_editor.form-invalid {
   @apply border-red-600 dark:border-red-700;
