@@ -34,7 +34,7 @@ class Code extends Textarea
         parent::__construct($label, $column, $formatted);
     }
 
-    public function getAssets(): array
+    protected function assets(): array
     {
         return [
             Css::make('vendor/moonshine-ace/ace.css'),
