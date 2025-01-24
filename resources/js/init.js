@@ -11,6 +11,8 @@ document.addEventListener('alpine:init', () => {
         config.options ?? {}
       );
 
+      this.editor.session.setValue(this.textarea.value)
+
       this.editor.session.setMode(`ace/mode/${config.language ?? 'javascript'}`)
 
       this.setTheme()
